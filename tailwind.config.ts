@@ -57,6 +57,34 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Canvas AI Workspace Colors
+        canvas: {
+          bg: "hsl(var(--canvas-bg))",
+          surface: "hsl(var(--canvas-surface))",
+          "surface-hover": "hsl(var(--canvas-surface-hover))",
+          border: "hsl(var(--canvas-border))",
+          "border-accent": "hsl(var(--canvas-border-accent))",
+        },
+        ai: {
+          active: "hsl(var(--ai-active))",
+          processing: "hsl(var(--ai-processing))",
+          idle: "hsl(var(--ai-idle))",
+          error: "hsl(var(--ai-error))",
+        },
+      },
+      backgroundImage: {
+        "gradient-primary": "var(--gradient-primary)",
+        "gradient-surface": "var(--gradient-surface)",
+        "gradient-canvas": "var(--gradient-canvas)",
+      },
+      boxShadow: {
+        panel: "var(--shadow-panel)",
+        card: "var(--shadow-card)",
+        glow: "var(--shadow-glow)",
+      },
+      transitionProperty: {
+        smooth: "var(--transition-smooth)",
+        fast: "var(--transition-fast)",
       },
       borderRadius: {
         lg: "var(--radius)",
