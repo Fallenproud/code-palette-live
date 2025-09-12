@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
 import { useCanvasStore } from '@/stores/canvasStore';
+import { useAppStore } from '@/stores/appStore';
 import { 
   MousePointer2, 
   Hand, 
@@ -33,6 +34,7 @@ export function CanvasToolbar() {
     zoomIn,
     zoomOut,
     resetCanvas,
+    fitToScreen,
     toggleGrid,
     toggleGuides,
     toggleRulers,
@@ -40,6 +42,8 @@ export function CanvasToolbar() {
     toggleLayers,
     toggleProperties
   } = useCanvasStore();
+  
+  const { toggleFullscreen } = useAppStore();
 
   const tools = [
     { id: 'select' as const, icon: MousePointer2, label: 'Select' },
@@ -107,6 +111,16 @@ export function CanvasToolbar() {
           title="Reset View"
         >
           <RotateCcw className="w-4 h-4" />
+        </Button>
+
+        <Button
+          variant="ghost"
+          size="sm"
+          className="h-8 w-8 p-0"
+          onClick={fitToScreen}
+          title="Fit to Screen"
+        >
+          <Maximize2 className="w-4 h-4" />
         </Button>
       </div>
 
@@ -191,7 +205,8 @@ export function CanvasToolbar() {
           variant="ghost"
           size="sm"
           className="h-8 w-8 p-0"
-          title="Fullscreen"
+          onClick={toggleFullscreen}
+          title="Toggle Fullscreen"
         >
           <Maximize2 className="w-4 h-4" />
         </Button>

@@ -79,8 +79,10 @@ export const useCanvasStore = create<CanvasState>((set, get) => ({
   },
 
   fitToScreen: () => {
-    // Implementation would calculate optimal zoom and pan
-    set({ zoom: 1, pan: { x: 0, y: 0 } });
+    // Calculate optimal zoom to fit content in viewport
+    // For now, set to a reasonable default that simulates fitting
+    const optimalZoom = 0.8; // Would be calculated based on canvas content
+    set({ zoom: optimalZoom, pan: { x: 0, y: 0 } });
   },
 
   zoomIn: () => {

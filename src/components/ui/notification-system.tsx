@@ -42,7 +42,16 @@ const mockNotifications: Notification[] = [
     timestamp: new Date(Date.now() - 5 * 60 * 1000),
     read: false,
     actions: [
-      { label: 'View Changes', onClick: () => console.log('View changes'), variant: 'default' }
+      { 
+        label: 'View Changes', 
+        onClick: () => {
+          // Navigate to code view or diff view
+          window.dispatchEvent(new CustomEvent('view-changes', { 
+            detail: { type: 'ai-generation', id: '1' } 
+          }));
+        }, 
+        variant: 'default' 
+      }
     ]
   },
   {
@@ -54,8 +63,26 @@ const mockNotifications: Notification[] = [
     timestamp: new Date(Date.now() - 15 * 60 * 1000),
     read: false,
     actions: [
-      { label: 'Accept', onClick: () => console.log('Accept'), variant: 'default' },
-      { label: 'Decline', onClick: () => console.log('Decline'), variant: 'outline' }
+      { 
+        label: 'Accept', 
+        onClick: () => {
+          // Add collaborator to project
+          window.dispatchEvent(new CustomEvent('accept-collaboration', { 
+            detail: { inviteId: '2', user: 'John Doe' } 
+          }));
+        }, 
+        variant: 'default' 
+      },
+      { 
+        label: 'Decline', 
+        onClick: () => {
+          // Decline collaboration invite
+          window.dispatchEvent(new CustomEvent('decline-collaboration', { 
+            detail: { inviteId: '2' } 
+          }));
+        }, 
+        variant: 'outline' 
+      }
     ]
   },
   {
@@ -67,7 +94,16 @@ const mockNotifications: Notification[] = [
     timestamp: new Date(Date.now() - 30 * 60 * 1000),
     read: true,
     actions: [
-      { label: 'Fix Errors', onClick: () => console.log('Fix errors'), variant: 'default' }
+      { 
+        label: 'Fix Errors', 
+        onClick: () => {
+          // Navigate to error locations and attempt auto-fix
+          window.dispatchEvent(new CustomEvent('fix-errors', { 
+            detail: { type: 'typescript', count: 2 } 
+          }));
+        }, 
+        variant: 'default' 
+      }
     ]
   },
   {
