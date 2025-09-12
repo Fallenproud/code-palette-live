@@ -10,7 +10,15 @@ import {
   MousePointer,
   Database,
   Layers,
-  Zap
+  Zap,
+  Grid,
+  Users,
+  BarChart,
+  Calendar,
+  ShoppingCart,
+  MessageSquare,
+  FileText,
+  Settings
 } from "lucide-react";
 
 interface ComponentLibraryProps {
@@ -75,6 +83,70 @@ const components: ComponentItem[] = [
     icon: Layers,
     description: "Stacked content layers with parallax",
     tags: ["3d", "parallax"]
+  },
+  {
+    id: "card-grid",
+    name: "Card Grid",
+    category: "Layout",
+    icon: Grid,
+    description: "Responsive card layout with hover effects",
+    tags: ["cards", "grid", "responsive"]
+  },
+  {
+    id: "team-section",
+    name: "Team Section",
+    category: "Content",
+    icon: Users,
+    description: "Team member showcase with profiles",
+    tags: ["team", "profiles", "social"]
+  },
+  {
+    id: "stats-counter",
+    name: "Stats Counter",
+    category: "Display",
+    icon: BarChart,
+    description: "Animated statistics with counters",
+    tags: ["stats", "animated", "numbers"]
+  },
+  {
+    id: "pricing-table",
+    name: "Pricing Table",
+    category: "Interactive",
+    icon: ShoppingCart,
+    description: "Feature comparison pricing plans",
+    tags: ["pricing", "plans", "comparison"]
+  },
+  {
+    id: "contact-form",
+    name: "Contact Form",
+    category: "Interactive",
+    icon: MessageSquare,
+    description: "Contact form with validation",
+    tags: ["form", "contact", "validation"]
+  },
+  {
+    id: "newsletter",
+    name: "Newsletter",
+    category: "Interactive",
+    icon: FileText,
+    description: "Email subscription with validation",
+    tags: ["email", "subscription", "newsletter"]
+  },
+  {
+    id: "timeline",
+    name: "Timeline",
+    category: "Content",
+    icon: Calendar,
+    description: "Vertical timeline with events",
+    tags: ["timeline", "events", "history"]
+  },
+  {
+    id: "settings-panel",
+    name: "Settings Panel",
+    category: "Interactive",
+    icon: Settings,
+    description: "User preferences and settings",
+    tags: ["settings", "preferences", "controls"]
   }
 ];
 
