@@ -9,6 +9,11 @@ import {
   Zap,
   Users
 } from "lucide-react";
+import { AssetManager } from "@/components/assets/AssetManager";
+import { ExportManager } from "@/components/export/ExportManager";
+import { AnalyticsDashboard } from "@/components/analytics/AnalyticsDashboard";
+import { SettingsPanel } from "@/components/settings/SettingsPanel";
+import { NotificationSystem } from "@/components/ui/notification-system";
 
 export function CanvasHeader() {
   return (
@@ -28,6 +33,11 @@ export function CanvasHeader() {
       </div>
 
       <div className="flex items-center gap-2">
+        <AssetManager />
+        <ExportManager />
+        <AnalyticsDashboard />
+        <NotificationSystem />
+        
         <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground">
           <RotateCcw className="w-4 h-4" />
         </Button>
@@ -44,9 +54,7 @@ export function CanvasHeader() {
           <Share className="w-4 h-4" />
         </Button>
         
-        <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground">
-          <Settings className="w-4 h-4" />
-        </Button>
+        <SettingsPanel />
       </div>
     </header>
   );
