@@ -11,7 +11,18 @@ import {
   Maximize2,
   RefreshCw
 } from "lucide-react";
-import canvasHeroImg from "@/assets/canvas-hero.jpg";
+import { 
+  HeroSection,
+  TextBlock,
+  ImageGallery,
+  CTAButton,
+  DataTable,
+  LayerStack,
+  CardGrid,
+  TeamSection,
+  StatsCounter,
+  PricingTable
+} from "./components";
 
 interface LivePreviewProps {
   selectedComponent: string | null;
@@ -49,50 +60,43 @@ export function LivePreview({ selectedComponent }: LivePreviewProps) {
           </div>
           <h3 className="text-2xl font-semibold text-foreground mb-2">Live Preview</h3>
           <p className="text-muted-foreground max-w-md">
-            Select a component from the library to see it rendered in real-time with AI enhancements
+            Select a component from the library to see it rendered in real-time
           </p>
         </div>
       );
     }
 
-    // Demo content based on selected component
+    // Render actual component based on selection
     switch (selectedComponent) {
       case "hero-section":
-        return (
-          <div className="min-h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center p-8">
-            <div className="text-center max-w-4xl">
-              <h1 className="text-6xl font-bold text-foreground mb-6 leading-tight">
-                Build the Future with
-                <span className="bg-gradient-primary bg-clip-text text-transparent"> AI Canvas</span>
-              </h1>
-              <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Create stunning applications with real-time AI assistance and live preview capabilities
-              </p>
-              <div className="flex gap-4 justify-center">
-                <Button size="lg" className="bg-gradient-primary hover:opacity-90">
-                  Get Started
-                </Button>
-                <Button size="lg" variant="outline">
-                  Learn More
-                </Button>
-              </div>
-            </div>
-          </div>
-        );
+        return <HeroSection />;
+      
+      case "text-block":
+        return <TextBlock />;
+      
+      case "image-gallery":
+        return <ImageGallery />;
       
       case "cta-button":
-        return (
-          <div className="flex items-center justify-center h-full">
-            <div className="space-y-6">
-              <Button size="lg" className="bg-gradient-primary hover:opacity-90 shadow-glow">
-                Primary Action
-              </Button>
-              <Button size="lg" variant="outline" className="hover:bg-primary/10">
-                Secondary Action
-              </Button>
-            </div>
-          </div>
-        );
+        return <CTAButton />;
+      
+      case "data-table":
+        return <DataTable />;
+      
+      case "layer-stack":
+        return <LayerStack />;
+      
+      case "card-grid":
+        return <CardGrid />;
+      
+      case "team-section":
+        return <TeamSection />;
+      
+      case "stats-counter":
+        return <StatsCounter />;
+      
+      case "pricing-table":
+        return <PricingTable />;
       
       default:
         return (
@@ -102,11 +106,8 @@ export function LivePreview({ selectedComponent }: LivePreviewProps) {
                 {selectedComponent}
               </h3>
               <p className="text-muted-foreground">
-                AI is generating this component with real-time optimization...
+                Component preview coming soon
               </p>
-              <div className="mt-4 flex justify-center">
-                <div className="animate-spin rounded-full h-8 w-8 border-2 border-primary border-t-transparent"></div>
-              </div>
             </Card>
           </div>
         );
